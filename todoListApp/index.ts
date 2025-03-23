@@ -159,8 +159,8 @@ function showMenu(): void {
 function handleMenu(choice: string): void {
   switch (choice) {
     case "1":
-      rl.question("Enter task description: ", (description) => {
-        rl.question("Enter due date (YYYY-MM-DD): ", (dateInput) => {
+      rl.question("Enter task description: ", (description:string) => {
+        rl.question("Enter due date (YYYY-MM-DD): ", (dateInput:string) => {
           try {
             todoList.addTodo(description, dateInput);
             console.log("Task added successfully.");
@@ -173,7 +173,7 @@ function handleMenu(choice: string): void {
       break;
 
     case "2":
-      rl.question("Enter task ID to mark as complete: ", (id) => {
+      rl.question("Enter task ID to mark as complete: ", (id:string) => {
         try {
           todoList.completeTodo(id);
           console.log("Task marked as completed.");
@@ -185,7 +185,7 @@ function handleMenu(choice: string): void {
       break;
 
     case "3":
-      rl.question("Enter task ID to remove: ", (id) => {
+      rl.question("Enter task ID to remove: ", (id:string) => {
         try {
           todoList.removeTodo(id);
           console.log("Task removed successfully.");
